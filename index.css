@@ -1,0 +1,413 @@
+@charset "utf-8";
+
+/* *************** Reset ****************************** */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+
+/* *************** 공통 ****************************** */
+
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* *************** header ****************************** */
+
+header {
+    padding: 20px 0;
+    position: fixed;
+
+    z-index: 9999;
+    width: 100%;
+}
+
+#main-header {
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+#main-header.dark {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 어둡게 */
+    color: #fff;
+}
+
+#main-header img {
+    transition: background-color 0.3s ease;
+}
+
+#main-header.dark img {
+    color: #fff;
+}
+
+/* ******* nav ********** */
+nav {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul li {
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    text-decoration: underline;
+}
+
+nav ul li a {
+    font-weight: 700;
+}
+
+/* ******* logo ********** */
+header .logo {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+.logo a {
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* ******* icon(utility ********** */
+.utility {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.utility a {
+    float: left;
+    margin-left: 30px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.utility a img {
+    width: 100%;
+    display: block;
+}
+
+
+
+/* *************** main ****************************** */
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+main .main-vd {
+    position: relative;
+    /* des 기준 */
+}
+
+main .des {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+
+    text-align: center;
+    color: #fff;
+}
+
+main .des h2 {
+    font-weight: 900;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+main .des h3 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* *************** section : content ****************************** */
+
+section {
+    width: 100%;
+    /* max-width: 1420px; */
+}
+
+section.content {
+    margin-bottom: 100px;
+}
+
+section.content .title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    position: relative;
+    /* .more 기준 */
+}
+
+section.content .title h2 {
+    font-weight: 900;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+section.content .title h3 {
+    font-size: 20px;
+}
+
+section.content .title .more {
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    transform: translate(-50%, -100%);
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+section.content .more:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+section.content .product {
+    width: 100%;
+}
+
+section.content .product .pd-vd {
+    float: left;
+    width: 50%;
+}
+
+section.content .product .pd-vd video {
+    width: 100%;
+}
+
+section.content .product .model {
+    float: left;
+    width: 50%;
+}
+
+section.content .product .model img {
+    width: 100%;
+    display: block;
+}
+
+/* *************** section : best ****************************** */
+
+section.best {
+    margin-bottom: 100px;
+}
+
+section.best h2 {
+    font-weight: 900;
+    font-size: 28px;
+    margin-bottom: 8px;
+    padding-left: 50px;
+}
+
+section.best .container {
+    width: 100;
+}
+
+section.best .container .wrap:last-child {
+    margin-bottom: 150px;
+}
+
+section.best .container .wrap {
+    float: left;
+    width: 25%;
+}
+
+section.best .container .wrap:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+
+    cursor: pointer;
+}
+
+section.best .container .wrap .img-box img {
+    width: 100%;
+    display: block;
+}
+
+section.best .container .wrap .des {
+    text-align: center;
+}
+
+section.best .container .wrap .des h4 {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+section.best .container .wrap .des p {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* *************** 마퀴 ****************************** */
+.marquee-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: inline-flex;
+    animation: scroll-marquee 20s linear infinite;
+}
+
+.marquee-track span {
+    font-size: 80px;
+    font-weight: 900;
+    color: black;
+    padding-right: 50px;
+}
+
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* *************** section : brand ****************************** */
+
+section.brand .content {
+    width: 100%;
+
+    position: relative;
+    /* .des 기준 */
+}
+
+section.brand .content img {
+    width: 100%;
+    display: block;
+}
+
+section.brand .content::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+section.brand .content .des {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+
+    transform: translate(-50%);
+
+    text-align: center;
+    color: #fff;
+    z-index: 999;
+}
+
+section.brand .content .des h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    text-transform: uppercase;
+}
+
+section.brand .content .des p {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+
+    display: inline-block;
+}
+
+section.brand .content .des p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* *************** footer ****************************** */
+
+/* footer {
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+} */
+
+footer {
+    position: relative;
+    /* copy 기준 */
+}
+
+footer ul {
+    padding: 30px 50px;
+}
+
+footer ul li {
+    float: left;
+    margin-right: 28px;
+    font-size: 14px;
+}
+
+footer ul li:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    padding-left: 50px;
+    font-size: 14px;
+
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
